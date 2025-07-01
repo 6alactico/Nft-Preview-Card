@@ -3,21 +3,22 @@
 @use "typography" as *;
 
 :root {
-    --cyan400: hsl(178, 100%, 50%);
-    --blue500: hsl(215, 51%, 70%);
-    --blue800: hsl(215, 32%, 27%);
-    --blue900: hsl(216, 50%, 16%);
-    --blue950: hsl(217, 54%, 11%);
-    --White: hsl(0, 0%, 100%);
+    --cyan400: hsl(178deg 100% 50%);
+    --blue500: hsl(215deg 51% 70%);
+    --blue800: hsl(215deg 32% 27%);
+    --blue900: hsl(216deg 50% 16%);
+    --blue950: hsl(217deg 54% 11%);
+    --white: hsl(0deg 0% 100%);
 }
 
 body {
     @include body;
+    
     align-items: center;
     background-color: var(--blue950);
     color: var(--blue500);
     display: flex;
-    font-family: "Outfit", sans-serif;
+    font-family: Outfit, sans-serif;
     font-size: 1.125rem;
     justify-self: center;
 }
@@ -34,8 +35,8 @@ img {
 .card {
     background-color: var(--blue900);
     border-radius: 1rem;
-    box-shadow: 0 0.5rem 4rem hsla(0, 0, 0, 0.25);
-    gap: $sp-5;
+    box-shadow: 0 0.5rem 4rem hsl(0deg 0% 0% / 25%);
+    gap: $sp-4;
     padding: $sp-5;
 }
 
@@ -45,6 +46,7 @@ img {
 
 .main-img {
     border-radius: 0.5rem;
+    margin-bottom: $sp-2;
     overflow: hidden;
     position: relative;
 }
@@ -98,19 +100,19 @@ hr {
     gap: $sp-4;
 }
 
+.overlay {
+    display: none;
+}
+
 // States
 .main-img:hover, .title:hover, .creator-name:hover, .overlay:hover {
     color: var(--cyan400);
     cursor: pointer;
 } 
 
-.overlay {
-    display: none;
-}
-
 .main-img:hover .overlay {
     align-items: center;
-    background-color: hsla(178, 100%, 50%, 0.5);
+    background-color: hsl(178deg 100% 50% / 50%);
     display: flex;
     height: 100%;
     justify-content: center;
