@@ -10,12 +10,12 @@
 }
 
 :root {
-  --cyan400: hsl(178, 100%, 50%);
-  --blue500: hsl(215, 51%, 70%);
-  --blue800: hsl(215, 32%, 27%);
-  --blue900: hsl(216, 50%, 16%);
-  --blue950: hsl(217, 54%, 11%);
-  --White: hsl(0, 0%, 100%);
+  --cyan400: hsl(178deg 100% 50%);
+  --blue500: hsl(215deg 51% 70%);
+  --blue800: hsl(215deg 32% 27%);
+  --blue900: hsl(216deg 50% 16%);
+  --blue950: hsl(217deg 54% 11%);
+  --white: hsl(0deg 0% 100%);
 }
 
 body {
@@ -25,7 +25,7 @@ body {
   background-color: var(--blue950);
   color: var(--blue500);
   display: flex;
-  font-family: "Outfit", sans-serif;
+  font-family: Outfit, sans-serif;
   font-size: 1.125rem;
   justify-self: center;
 }
@@ -107,13 +107,13 @@ hr {
   gap: 1rem;
 }
 
+.overlay {
+  display: none;
+}
+
 .main-img:hover, .title:hover, .creator-name:hover, .overlay:hover {
   color: var(--cyan400);
   cursor: pointer;
-}
-
-.overlay {
-  display: none;
 }
 
 .main-img:hover .overlay {
