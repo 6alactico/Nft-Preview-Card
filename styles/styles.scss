@@ -1,14 +1,119 @@
+@use "layout" as *;
+@use "spacing" as *;
+@use "typography" as *;
 
 :root {
-    --blue500: hsl(215, 51%, 70%);
     --cyan400: hsl(178, 100%, 50%);
-    --Blue950: hsl(217, 54%, 11%);
-    --Blue900: hsl(216, 50%, 16%);
-    --Blue800: hsl(215, 32%, 27%);
+    --blue500: hsl(215, 51%, 70%);
+    --blue800: hsl(215, 32%, 27%);
+    --blue900: hsl(216, 50%, 16%);
+    --blue950: hsl(217, 54%, 11%);
     --White: hsl(0, 0%, 100%);
 }
 
 body {
+    @include body;
+    align-items: center;
+    background-color: var(--blue950);
+    color: var(--blue500);
+    display: flex;
     font-family: "Outfit", sans-serif;
     font-size: 1.125rem;
+    justify-self: center;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.title, .creator-name {
+    color: var(--White);
+}
+
+.card {
+    background-color: var(--blue900);
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 4rem hsla(0, 0, 0, 0.25);
+    gap: $sp-5;
+    padding: $sp-5;
+}
+
+.content {
+    gap: $sp-4;
+}
+
+.main-img {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.description {
+    font-weight: 300;
+    line-height: 1.8rem;
+}
+
+.inline-layout {
+    display: flex;
+    justify-content: space-between;
+    font-size: $fs-base;
+}
+
+.inline-left, .inline-right {
+    align-items: center;
+    display: flex;
+    gap: $sp-2;
+}
+
+.inline-left {
+    color: var(--cyan400);
+    font-weight: 600;
+}
+
+hr {
+   background-color: var(--blue800);
+   border: none;
+   height: 0.003rem;
+   margin-block: 0.25rem;
+}
+
+.profile-img {
+    border: 0.063rem solid var(--White);
+    border-radius: 50%;
+    width: 2.25rem;
+}
+
+.creator {
+    align-items: center;
+    display: flex;
+    color: var(--blue500);
+    font-size: $fs-base;
+    font-weight: 300;
+    gap: $sp-4;
+}
+
+// States
+.main-img:hover, .title:hover, .creator-name:hover, .overlay:hover {
+    color: var(--cyan400);
+    cursor: pointer;
+} 
+
+.overlay {
+    display: none;
+}
+
+.main-img:hover .overlay {
+    align-items: center;
+    background-color: hsla(178, 100%, 50%, 0.5);
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
 }
