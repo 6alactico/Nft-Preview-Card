@@ -28,6 +28,7 @@ body {
   font-family: Outfit, sans-serif;
   font-size: 1.125rem;
   justify-content: center;
+  margin: auto;
 }
 
 img {
